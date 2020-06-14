@@ -12,4 +12,4 @@ RUN pip install tensorflow==2.2.0
 RUN pip install -r requirements.txt
 
 #Run Fashion_MNIST.py when container is launced
-CMD ["python", "kerasAss1.py"]
+CMD ["python", "kerasass1.py"]
