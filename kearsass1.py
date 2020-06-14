@@ -7,10 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1WcRiWUX8FflT2QIWu0Q_bMeN6mYK87nH
 """
 
-!pip install -q -U tensorflow_datasets
-!pip install tensorflow-metadata
-
-! python -m tensorflow_datasets.scripts.download_and_prepare --register_checksums --datasets=oxford_flowers102
 
 import tensorflow_datasets as tfds
 import tensorflow as tf
@@ -21,10 +17,6 @@ import numpy as np
 
 test, train, validate = tfds.load('oxford_flowers102', split=['train','test','validation'], as_supervised=True)
 
-test
-
-validate
-
 from tensorflow.python.framework import ops
 ops.reset_default_graph()
 
@@ -32,7 +24,6 @@ ntrain=sum(1 for _ in train)
 ntest=sum(1 for _ in test)
 nval=sum(1 for _ in  validate)
 
-nval
 
 def normalize_img(image, label):
     image = tf.cast(image, tf.float32)
@@ -79,7 +70,6 @@ model.add(Dropout(0.1))
 model.add(Dense(256, activation='relu'))
 model.add(Dense(102, activation='softmax'))
 
-model.summary()
 
 model.compile(loss='sparse_categorical_crossentropy',  optimizer=Adam(learning_rate=0.001), metrics=['accuracy'])
 
