@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1gW8SDGdi037wib8BAF_wqwX1TfVpf6Qp
 """
 
-import tensorflow_datasets as tfds
 import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense, Conv2D, Activation, MaxPooling2D, Flatten, Dropout, AveragePooling2D
