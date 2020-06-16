@@ -7,9 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1gW8SDGdi037wib8BAF_wqwX1TfVpf6Qp
 """
 
-from google.colab import drive
-drive.mount('/content/drive')
-
 import tensorflow_datasets as tfds
 import tensorflow as tf
 from keras.models import Sequential
