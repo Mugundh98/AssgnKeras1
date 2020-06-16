@@ -17,7 +17,7 @@ from keras.layers import Dense, Conv2D, Activation, MaxPooling2D, Flatten, Dropo
 from tensorflow.keras.optimizers import Adam
 import numpy as np
 
-new_model = tf.keras.models.load_model('/content/drive/My Drive/iotassign2/my_model')
+new_model = tf.keras.models.load_model('https://drive.google.com/file/d/1-4hpnSJkpvNCXaEYCBR8SjXcpaen9UPb/view?usp=sharing')
 
 # Check its architecture
 new_model.summary()
@@ -25,14 +25,14 @@ new_model.summary()
 new_model.compile(loss='sparse_categorical_crossentropy',  optimizer=Adam(learning_rate=0.001), metrics=['accuracy'])
 
 import scipy.io
-all_labels = scipy.io.loadmat('/content/drive/My Drive/Iot Assign 1/imagelabels.mat')['labels'][0] - 1
+all_labels = scipy.io.loadmat('https://drive.google.com/file/d/1EoNQNHBZGn7-ugRaOU0t7axG5K3dBjgZ/view?usp=sharing')['labels'][0] - 1
 
 test_labels = all_labels[0:200]
 
 from keras.preprocessing.image import ImageDataGenerator
 test_datagen = ImageDataGenerator(rescale=1. / 255)
 
-test_generator = test_datagen.flow_from_directory('/content/drive/My Drive/Iot Assign 1/102flowers',
+test_generator = test_datagen.flow_from_directory('https://drive.google.com/drive/folders/1c6JKtDjMh7Qlltqt1O6pqXuiRLAbh0oj?usp=sharing',
                               class_mode=None,
                               shuffle=False, target_size=(128, 128))
 
