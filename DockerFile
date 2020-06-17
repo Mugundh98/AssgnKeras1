@@ -7,7 +7,9 @@ RUN pip install -r requirements.txt
 
 COPY trail /trail
 
-COPY my_model
+COPY my_model /
+
+Run chmod u+x ./kerascheck.py
 
 #Run  when container is launced
 CMD ./kerascheck.py
